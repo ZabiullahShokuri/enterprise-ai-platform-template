@@ -1,0 +1,14 @@
+{
+  "name": "@enterprise/prettier-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared Prettier configuration for the Enterprise AI Platform Template.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./prettier.config.mjs"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
