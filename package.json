@@ -1,0 +1,42 @@
+{
+  "name": "enterprise-ai-platform-template",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Enterprise-grade monorepo template for AI, Automation, IoT, Smart Building, and Cloud-native applications.",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=9.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZabiullahShokuri/enterprise-ai-platform-template.git"
+  },
+  "author": "Zabiullah Shokuri",
+  "keywords": [
+    "enterprise",
+    "ai",
+    "automation",
+    "iot",
+    "smart-building",
+    "monorepo",
+    "turborepo",
+    "pnpm",
+    "nextjs",
+    "fastapi"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "check": "turbo lint && turbo typecheck && turbo test",
+    "format": "turbo format",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4"
+  }
+}
