@@ -1,3 +1,1 @@
-import base from "./base.mjs";
-
-export default base;
+export { default } from "./next.mjs";

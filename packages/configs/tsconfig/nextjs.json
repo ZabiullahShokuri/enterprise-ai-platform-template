@@ -4,6 +4,13 @@
     "jsx": "preserve",
     "allowJs": true,
     "incremental": true,
+
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+
     "plugins": [
       {
         "name": "next"

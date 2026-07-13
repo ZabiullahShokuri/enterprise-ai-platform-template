@@ -1,0 +1,37 @@
+{
+  "name": "@enterprise/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Enterprise AI Platform - Web Application",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZabiullahShokuri/enterprise-ai-platform-template.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:write": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "^15.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@enterprise/eslint-config": "workspace:*",
+    "@enterprise/prettier-config": "workspace:*",
+    "@enterprise/tsconfig": "workspace:*",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.30.0",
+    "prettier": "^3.6.0",
+    "typescript": "^5.8.3"
+  }
+}
