@@ -1,0 +1,19 @@
+{
+  "name": "@enterprise/ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared UI components for the Enterprise AI Platform Template.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZabiullahShokuri/enterprise-ai-platform-template.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@enterprise/tsconfig": "workspace:*",
+    "typescript": "^5.8.3"
+  }
+}

@@ -552,3 +552,66 @@ Official documentation referenced by this Architecture Decision Record:
 - TypeScript Documentation — https://www.typescriptlang.org/docs
 - Turborepo Documentation — https://turbo.build/repo/docs
 - pnpm Workspace Documentation — https://pnpm.io/workspaces
+
+--------------------------------------------------------
+## Shared vs Application Code
+
+## Shared vs Application Code
+
+To maintain a scalable and maintainable monorepo architecture, all code
+must be categorized as either shared or application-specific.
+
+### Shared Code
+
+Shared code belongs in the `packages/` directory.
+
+Shared packages are framework-independent or reusable across multiple
+applications.
+
+Examples include:
+
+- UI components
+- Design tokens
+- Shared hooks
+- Shared providers
+- Shared types
+- API clients
+- Authentication libraries
+- Utility functions
+
+Shared code should never depend on a specific application.
+
+---
+
+### Application Code
+
+Application-specific code belongs inside each application under
+`apps/<application>/src`.
+
+Examples include:
+
+- Business features
+- Route handlers
+- Pages
+- Layouts
+- Feature state
+- Application configuration
+- Feature-specific hooks
+- Domain services
+
+Application code may depend on shared packages, but shared packages
+must never depend on application code.
+
+---
+
+### Dependency Direction
+
+The dependency flow must always remain:
+
+Applications
+        ↓
+Shared Packages
+        ↓
+External Libraries
+
+Shared packages must never import from any application.

@@ -1,14 +1,21 @@
+# Normalize text files to LF by default
 * text=auto eol=lf
 
+# Shell and YAML files
 *.sh text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
 
+# Windows scripts
 *.bat text eol=crlf
 *.cmd text eol=crlf
 
+# Images
 *.png binary
 *.jpg binary
 *.jpeg binary
 *.gif binary
 *.ico binary
+
+# SVG is text-based
+*.svg text

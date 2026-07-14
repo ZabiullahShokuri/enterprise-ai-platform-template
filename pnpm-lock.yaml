@@ -87,6 +87,15 @@ importers:
 
   packages/types: {}
 
+  packages/ui:
+    devDependencies:
+      '@enterprise/tsconfig':
+        specifier: workspace:*
+        version: link:../configs/tsconfig
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
 packages:
 
   '@emnapi/runtime@1.11.2':
