@@ -1,4 +1,4 @@
 {
-  "extends": "@enterprise/tsconfig/base.json",
+  "extends": "@enterprise/tsconfig/react-library.json",
   "include": ["src"]
 }
