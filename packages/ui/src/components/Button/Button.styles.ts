@@ -11,7 +11,12 @@ export function getButtonStyles({
   variant = "primary",
   size = "md",
   fullWidth = false,
-}: Pick<ButtonProps, "variant" | "size" | "fullWidth">): ButtonStyleResult {
+  disabled = false,
+  loading = false,
+}: Pick<
+  ButtonProps,
+  "variant" | "size" | "fullWidth" | "disabled" | "loading"
+>): ButtonStyleResult {
   const theme = lightTheme;
   const classes = [
     "enterprise-button",
@@ -72,17 +77,23 @@ export function getButtonStyles({
 
   return {
     className: classes,
+    style: {
+      borderRadius: theme.radius.md,
 
-  style: {
-  borderRadius: theme.radius.md,
+      ...sizeStyles[size],
 
-  ...sizeStyles[size],
+      fontWeight: theme.typography.fontWeight.medium,
 
-  fontWeight: theme.typography.fontWeight.medium,
+      cursor: "pointer",
+      transition: "all 0.2s ease-in-out",
 
-  cursor: "pointer",
+      outline: "none",
 
-  ...variantStyles[variant],
-}
+      opacity: loading ? 0.7 : 1,
+
+      pointerEvents: disabled || loading ? "none" : "auto",
+
+      ...variantStyles[variant],
+    },
   };
 }

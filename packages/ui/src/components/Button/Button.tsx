@@ -8,7 +8,7 @@ export function Button({
   fullWidth = false,
   leftIcon,
   rightIcon,
-  disabled,
+  disabled = false,
   className,
   ...props
 }: ButtonProps) {
@@ -16,6 +16,8 @@ export function Button({
     variant,
     size,
     fullWidth,
+    disabled,
+    loading,
   });
 
   return (
@@ -29,6 +31,13 @@ export function Button({
       className={[styles.className, className].filter(Boolean).join(" ")}
       style={styles.style}
       {...props}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.filter = "brightness(0.95)";
+      }}
+
+      onMouseLeave={(e) => {
+        e.currentTarget.style.filter = "brightness(1)";
+      }}
     >
       {leftIcon}
 
