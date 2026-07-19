@@ -85,9 +85,12 @@ export function getButtonStyles({
       fontWeight: theme.typography.fontWeight.medium,
 
       cursor: "pointer",
-      transition: "all 0.2s ease-in-out",
 
-      outline: "none",
+      transition: "all .2s ease",
+
+      userSelect: "none",
+
+      boxShadow: "0 0 0 0 transparent",
 
       opacity: loading ? 0.7 : 1,
 

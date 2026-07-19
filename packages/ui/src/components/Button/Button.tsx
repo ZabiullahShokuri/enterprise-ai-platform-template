@@ -22,14 +22,19 @@ export function Button({
 
   return (
     <button
-      type="button"
-      disabled={disabled || loading}
-      data-variant={variant}
-      data-size={size}
-      data-loading={loading}
-      data-full-width={fullWidth}
-      className={[styles.className, className].filter(Boolean).join(" ")}
+      onFocus={(e) => {
+        e.currentTarget.style.boxShadow = "0 0 0 3px rgba(59,130,246,.35)";
+      }}
+
+      onBlur={(e) => {
+        e.currentTarget.style.boxShadow = "0 0 0 0 transparent";
+      }}
+      className={styles.className}
       style={styles.style}
+      disabled={disabled || loading}
+      aria-disabled={disabled || loading}
+      aria-busy={loading}
+      type="button"
       {...props}
       onMouseEnter={(e) => {
         e.currentTarget.style.filter = "brightness(0.95)";
