@@ -26,7 +26,8 @@ export function Button({
       data-size={size}
       data-loading={loading}
       data-full-width={fullWidth}
-      className={className}
+      className={[styles.className, className].filter(Boolean).join(" ")}
+      style={styles.style}
       {...props}
     >
       {leftIcon}
