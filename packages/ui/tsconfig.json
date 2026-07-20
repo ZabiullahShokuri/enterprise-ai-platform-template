@@ -1,4 +1,10 @@
 {
   "extends": "@enterprise/tsconfig/react-library.json",
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ]
 }
