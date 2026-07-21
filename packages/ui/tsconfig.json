@@ -1,5 +1,11 @@
 {
   "extends": "@enterprise/tsconfig/react-library.json",
+  "compilerOptions": {
+    "types": [
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ]
+  },
   "include": ["src"],
   "exclude": [
     "**/*.test.ts",
