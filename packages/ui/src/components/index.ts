@@ -9,3 +9,4 @@ export * from "./Avatar";
 export * from "./Tooltip";
 export * from "./Card";
 export * from "./Alert";
+export * from "./Progress";
