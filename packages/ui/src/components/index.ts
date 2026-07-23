@@ -7,3 +7,4 @@ export * from "./Select";
 export * from "./Spinner";
 export * from "./Avatar";
 export * from "./Tooltip";
+export * from "./Card";
