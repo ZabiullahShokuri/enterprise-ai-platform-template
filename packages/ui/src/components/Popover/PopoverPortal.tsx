@@ -1,3 +1,4 @@
+import { createPortal } from "react-dom";
 import type { ReactNode } from "react";
 
 export interface PopoverPortalProps {
@@ -5,5 +6,9 @@ export interface PopoverPortalProps {
 }
 
 export function PopoverPortal({ children }: PopoverPortalProps) {
-  return <>{children}</>;
+  if (typeof document === "undefined") {
+    return null;
+  }
+
+  return createPortal(children, document.body);
 }

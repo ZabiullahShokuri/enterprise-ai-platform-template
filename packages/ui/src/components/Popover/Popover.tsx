@@ -1,9 +1,10 @@
-import { forwardRef, useRef } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 
 import {
   useClickOutside,
   useControllableState,
   useEscapeKey,
+  useFocusTrap,
 } from "../../foundation";
 
 import type { PopoverProps } from "./Popover.types";
@@ -22,6 +23,10 @@ export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
       defaultValue: defaultOpen ?? false,
       onChange: onOpenChange,
     });
+
+    const triggerRef = useRef<HTMLButtonElement | null>(null);
+
+    // Behavior Hooks
 
     useClickOutside(
       rootRef,
@@ -42,11 +47,22 @@ export const Popover = forwardRef<HTMLDivElement, PopoverProps>(
       },
     );
 
+    useFocusTrap(rootRef, {
+      enabled: isOpen,
+    });
+
+    useEffect(() => {
+      if (!isOpen) {
+        triggerRef.current?.focus();
+      }
+    }, [isOpen]);
+
     return (
       <PopoverProvider
         value={{
           open: isOpen,
           setOpen,
+          triggerRef,
         }}
       >
         <div
