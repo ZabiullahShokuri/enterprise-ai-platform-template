@@ -14,3 +14,4 @@ export * from "./Skeleton";
 export * from "./Modal";
 export * from "./Tabs";
 export * from "./Command";
+export * from "./NavigationMenu";
